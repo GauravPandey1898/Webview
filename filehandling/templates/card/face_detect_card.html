@@ -1,0 +1,25 @@
+
+{% block content%}
+  <div class="card text-white bg-info mb-3" style="max-width:18rem;">
+    <div class="card-header"><center>Face Recognition</center>
+
+    </div>
+    <div class="card-body">
+      <h5 class="card-title" ><center>Classification</center></h5>
+      <div class="card-content">
+        <center>
+          upload the image for Classification purposes
+          <br></br>
+          <br></br>
+          
+          <a href="{% url 'filehandling:classification'%}" class="btn btn-danger" role="button">Click Here</a>
+        </center>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+{% endblock%}

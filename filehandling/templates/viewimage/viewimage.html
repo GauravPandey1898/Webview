@@ -1,0 +1,27 @@
+{% extends 'filehandling/base_auth.html' %}
+{% block content %}
+<style media="screen">
+  div.card{
+    width:400px;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    text-align:center;
+
+  }
+  </style>
+
+{% for i in img %}
+<center>
+  <div class="card" style="width: 18rem;">
+  <img src="{{ i.url }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Person Name</p>
+  </div>
+</div>
+<br></br>
+
+
+
+</center>
+
+{% endfor %}
+{% endblock %}

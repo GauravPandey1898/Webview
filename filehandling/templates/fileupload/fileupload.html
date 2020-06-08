@@ -1,0 +1,69 @@
+{% extends 'filehandling/base_auth.html' %}
+{% block content%}
+<style media="screen">
+  .textinput{
+    padding:5px
+  }
+</style>
+<script>
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+<style media="screen">
+  div.card{
+    width:400px;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    text-align:center;
+
+  }
+</style>
+<center>
+  <div class="mt-4">
+<div class="col-sm">
+<div class="card text-white bg-info mb-3" style="max-width:35rem;">
+  <div class="card-title">
+  <h5 style="color:red;">Upload Person's Face Image</h5>
+
+  </div>
+  <form  method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if messages %}
+                      <div class="span12">
+                          {% for message in messages %}
+                              <div class="alert alert-danger">
+                                  {{ message|safe }}
+                              </div>
+                          {% endfor %}
+                      </div>
+    {% endif %}
+    <br></br>
+    <center>
+      {{ forms.as_p }}
+      <br></br>
+      <button type="submit" class="btn btn-danger">Submit</button>
+      </center>
+
+
+    </form>
+    </div>
+
+</div>
+</div>
+</center>
+
+
+<!--  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="name" placeholder="Person's Name">
+  <br></br>
+  <input type="file" name="person_image" value="">
+
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="customFile" name="person_image">
+    <label class="custom-file-label" for="customFile" style="text-align: left;">Choose file</label>
+  </div>
+  -->
+
+
+
+{%endblock%}

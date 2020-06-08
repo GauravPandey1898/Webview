@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../voice-asis"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
